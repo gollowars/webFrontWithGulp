@@ -14,6 +14,8 @@ locals = null
 # JS
 webpack = require 'gulp-webpack'
 uglify = require 'gulp-uglify'
+modernizr = require 'gulp-modernizr'
+
 # CSS
 stylus = require 'gulp-stylus'
 autoprefixer = require 'gulp-autoprefixer'
@@ -58,6 +60,12 @@ gulp.task 'webpack',->
   .pipe uglify()
   .pipe gulp.dest Config.webpack.dest
 
+gulp.task 'modernizr',->
+  gulp.src [Config.webpack.dest+'*.js',Config.stylus.dest+'*.css']
+  .pipe modernizr Config.modernizr.outputName,Config.modernizr.options
+  .pipe uglify()
+  .pipe gulp.dest Config.modernizr.dest
+
 ##################
 # CSS
 ######
@@ -98,16 +106,23 @@ gulp.task 'sprite',->
 ##################
 # SERVER
 ######
-gulp.task 'serve',['views','webpack','stylus'],->
+gulp.task 'serve',->
   browserSync.init
     server:
       baseDir: Config.server.root
 
 
+gulp.task 'startServer',->
+  runSequence(
+    ['views','webpack','stylus']
+    'modernizr'
+    'serve'
+  )
+
 ##################
 # WATCH
 ######
-gulp.task 'watch',['serve'],->
+gulp.task 'watch',['startServer'],->
   changeHandler = (event)->
     console.log 'File ' + event.path + ' was ' + event.type + ', running tasks...'
     browserSync.reload()

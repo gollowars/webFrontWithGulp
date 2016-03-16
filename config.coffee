@@ -5,6 +5,16 @@ module.exports =
     dest: './dist/assets/js/'
     src: './source/js/'
     watchFiles: ['./source/js/**/*.js','./source/js/**/*.coffee']
+  modernizr:
+    dest: './dist/assets/js/'
+    outputName: 'modernizr.js'
+    options: [
+      'setClasses'
+      'addTest'
+      'html5printshiv'
+      'testProp'
+      'fnBind'
+    ]
   data:
     destJa: './dist/'
     destEn: './dist/en/'

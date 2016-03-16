@@ -1,3 +1,5 @@
 ---
 css: '/assets/css/style.css'
-js: '/assets/js/main.js'
+js:
+  main: '/assets/js/main.js'
+  modernizr: '/assets/js/modernizr.js'

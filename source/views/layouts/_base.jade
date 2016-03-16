@@ -19,7 +19,9 @@ meta(property='og:site_name', content=meta.sitename)
 meta(property='og:type', content='article')
 meta(property='og:image', content=meta.ogimg)
 meta(property='og:url', content=meta.ogurl)
-// STYLE
+// Modernizr
+script(type='text/javascript', src=files.js.modernizr)
+// Style
 link(rel='stylesheet', href=files.css)
 body
   header#header
@@ -29,5 +31,5 @@ body
     for value in [0,1,2,3,4,5,6,7,8]
       article
         h1: = "title" + value 
-
-  script(type='text/javascript', src=files.js)
+  //Script
+  script(type='text/javascript', src=files.js.main)
