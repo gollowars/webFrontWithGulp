@@ -16,7 +16,7 @@ webpack = require 'gulp-webpack'
 uglify = require 'gulp-uglify'
 # CSS
 stylus = require 'gulp-stylus'
-autoprefixer = require 'autoprefixer-stylus'
+autoprefixer = require 'gulp-autoprefixer'
 sourcemaps = require 'gulp-sourcemaps'
 jeet = require 'jeet'
 
@@ -70,10 +70,11 @@ gulp.task 'stylus',->
     compress: true
     lineou: true
     use: [
-      autoprefixer
-        browsers:  ['last 3 versions', 'ie 8']
       jeet()
     ]
+  .pipe autoprefixer
+    browsers: ['last 2 versions','IE 8']
+    cascade: false
   .pipe sourcemaps.write('.')
   .pipe gulp.dest Config.stylus.dest
 
