@@ -1,0 +1,2 @@
+Sample = require './modules/Sample'
+

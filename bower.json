@@ -1,0 +1,18 @@
+{
+  "name": "basic",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Yoshizumi Ashikawa"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
