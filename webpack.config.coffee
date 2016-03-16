@@ -28,11 +28,10 @@ module.exports = {
 
   plugins: [
     new BowerWebpackPlugin()
-
-    # ↓下記では`main`で指定されたファイルが配列の場合読み込めない！
-    # new webpack.ResolverPlugin(
-    #   new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin ".bower.json", ["main"]
-    # )
+    new webpack.ProvidePlugin
+      $:      'jquery'
+      jQuery: 'jquery'
+      jquery: 'jquery'
   ]
 
 }
