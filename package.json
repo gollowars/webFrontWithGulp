@@ -26,6 +26,7 @@
     "gulp.spritesmith": "^6.2.0",
     "jeet": "^6.1.2",
     "run-sequence": "^1.1.5",
+    "simplex-noise": "^2.2.0",
     "vinyl-yaml-data": "^2.0.0"
   },
   "scripts": {

@@ -17,5 +17,13 @@
   ],
   "dependencies": {
     "jquery": "^2.2.1"
+  },
+  "devDependencies": {
+    "vivus": "^0.3.0",
+    "jquery.transit": "^0.9.12",
+    "jquery-easing": "*",
+    "pixi.js": "pixi#^3.0.11",
+    "lodash": "^4.13.1",
+    "noisejs": "*"
   }
 }

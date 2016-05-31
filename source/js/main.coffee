@@ -1,5 +1,5 @@
 $ = require 'jquery'
-Sample = require './modules/Sample'
+App = require './modules/App'
 
-
-a = new Sample()
+$ ->
+  console.log 'ashikawa'
