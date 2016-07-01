@@ -75,7 +75,7 @@ gulp.task 'stylus',->
     errorHandler: notify.onError('<%= error.message %>')
   .pipe sourcemaps.init()
   .pipe stylus
-    compress: true
+    compress: false
     lineou: true
     use: [
       jeet()
@@ -130,7 +130,7 @@ gulp.task 'watch',['startServer'],->
   w1 = gulp.watch Config.data.path, ['views']
   w2 = gulp.watch Config.data.watchFiles, ['views']
   w3 = gulp.watch Config.webpack.watchFiles, ['webpack']
-  w4 = gulp.watch Config.stylus.path, ['stylus']
+  w4 = gulp.watch Config.stylus.path[0], ['stylus']
 
   w1.on 'change',changeHandler
   w2.on 'change',changeHandler

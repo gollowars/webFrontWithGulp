@@ -24,7 +24,7 @@ module.exports =
     viewPath: ['./source/views/**/*.jade','!./source/views/**/_*.jade']
     watchFiles: ['./source/views/**/*.jade']
   stylus:
-    path: ['./source/css/**/*.stylus','./source/css/**/*.styl']
+    path: ['./source/css/**/*.styl','!./source/css/**/_*.styl']
     dest: './dist/assets/css/'
     sourcemaps: './dist/assets/css/'
   sprite:
