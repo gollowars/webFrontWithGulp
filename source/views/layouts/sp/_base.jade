@@ -1,12 +1,12 @@
 doctype html
-html(lang = meta.lang)<!--<![endif]-->
+html(lang = meta.lang)
   head(prefix="og: http://ogp.me/ns#  article: http://ogp.me/ns/article#")
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     title: = meta.title
     meta(name='description', content=meta.description)
     meta(name='keywords', content=meta.keywords)
-    meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.4')
     // OGP
     meta(property='og:title', content=meta.title)
     meta(property='og:description', content=meta.description)
@@ -27,11 +27,14 @@ html(lang = meta.lang)<!--<![endif]-->
     meta(name="twitter:title" content=meta.title)
     meta(name="twitter:url" content=meta.ogurl)
     meta(name="twitter:image" content=meta.ogimg)
+    // iOS
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    link(rel="apple-touch-icon-precomposed" href=meta.icon)
     // Useragent
     script(type='text/javascript', src='/assets/js/useragent.min.js')
     script.
       var ua = USERAGENT.analyze(navigator.userAgent);
-      if(ua.os.name.indexOf('iOS') > -1 || ua.os.name.indexOf('Android') > -1 ){window.location.href = "/sp/"}
+      if(ua.os.name.indexOf('iOS') == -1 && ua.os.name.indexOf('Android') == -1 ){window.location.href = "/"}
       var htmlElement = document.documentElement
       htmlElement.className += " "+ua.browser.name
       htmlElement.className += " "+ua.device.name
@@ -40,6 +43,6 @@ html(lang = meta.lang)<!--<![endif]-->
     // Style
     link(rel='stylesheet', href=files.css)
 body
-  h1 hello world
+  h1 SP world
   //Script
   script(type='text/javascript', src=files.js.main)

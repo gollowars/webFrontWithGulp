@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja"><!--<![endif]-->
+<html lang="ja">
   <head prefix="og: http://ogp.me/ns#  article: http://ogp.me/ns/article#">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
     </title>
     <meta name="description" content="説明">
     <meta name="keywords" content="キーワード">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.4">
     <!-- OGP-->
     <meta property="og:title" content="タイトル">
     <meta property="og:description" content="説明">
@@ -28,11 +28,14 @@
     <meta name="twitter:title" content="タイトル">
     <meta name="twitter:url" content="">
     <meta name="twitter:image" content="">
+    <!-- iOS-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon-precomposed">
     <!-- Useragent-->
     <script type="text/javascript" src="/assets/js/useragent.min.js"></script>
     <script>
       var ua = USERAGENT.analyze(navigator.userAgent);
-      if(ua.os.name.indexOf('iOS') > -1 || ua.os.name.indexOf('Android') > -1 ){window.location.href = "/sp/"}
+      if(ua.os.name.indexOf('iOS') == -1 && ua.os.name.indexOf('Android') == -1 ){window.location.href = "/"}
       var htmlElement = document.documentElement
       htmlElement.className += " "+ua.browser.name
       htmlElement.className += " "+ua.device.name
@@ -44,7 +47,7 @@
   </head>
 </html>
 <body>
-  <h1>hello world</h1>
+  <h1>SP world</h1>
   <!--Script-->
   <script type="text/javascript" src="/assets/js/main.js"></script>
 </body>

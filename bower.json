@@ -24,6 +24,7 @@
     "jquery-easing": "*",
     "pixi.js": "pixi#^3.0.11",
     "lodash": "^4.13.1",
-    "noisejs": "*"
+    "noisejs": "*",
+    "useragent.js": "^0.5.3"
   }
 }
